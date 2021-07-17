@@ -1,0 +1,19 @@
+{
+  "name": "wall-rte",
+  "version": "0.0.1",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snowbot3/wall-rte.git"
+  },
+  "author": "snowbot3@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snowbot3/wall-rte/issues"
+  },
+  "homepage": "https://github.com/snowbot3/wall-rte#readme"
+}
