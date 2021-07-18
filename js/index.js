@@ -2,9 +2,7 @@
  * rich text editor?
  * div contentEditable=true
  */
-import { css, dom, doms, elem } from '../wall.js';
-import * as status from '../status.js';
-import log from '../log.js';
+import { css, dom, doms, elem } from '/lib/wall.js';
 
 css(`
 div.rte {
@@ -28,8 +26,6 @@ div.rte-single > p {
 }
 `);
 
-//import { doms } from '../wall.js';
-//import log from '../log.js';
 
 // how to handle formating?
 // start with html?
@@ -86,7 +82,7 @@ class RichText {
 			ev.preventDefault();
 			return;
 		}
-		log(`${ev.constructor.name} : ${ev.type} : ${ev.key} : ${ev.keyCode}`);
+		//log(`${ev.constructor.name} : ${ev.type} : ${ev.key} : ${ev.keyCode}`);
 		onKeyDown(ev);
 		if (['Backspace','Enter'].includes(ev.key)) {
 			// check for changes?
@@ -98,11 +94,11 @@ class RichText {
 		}
 	}
 	onKeyPress(ev) {
-		log(`${ev.constructor.name} : ${ev.type} : ${ev.key} : ${ev.keyCode}`);
+		//log(`${ev.constructor.name} : ${ev.type} : ${ev.key} : ${ev.keyCode}`);
 		onKeyPress(ev);
 	}
 	onKeyUp(ev) {
-		log(`${ev.constructor.name} : ${ev.type} : ${ev.key} : ${ev.keyCode}`);
+		//log(`${ev.constructor.name} : ${ev.type} : ${ev.key} : ${ev.keyCode}`);
 		onKeyUp(ev);
 		if (ev.key == 'Enter') {
 			const sel = window.getSelection();
@@ -122,7 +118,6 @@ class RichText {
 			// not sure about alt key checking yet.
 			if (!this.dirty) {
 				this.dirty = true;
-				status.push('Dirty');
 			}
 			const sel = window.getSelection();
 			const line = this.findLineElem(sel.focusNode);
